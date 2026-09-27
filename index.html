@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brewtopia Coffee — Vaishali Nagar, Jaipur</title>
+<meta name="description" content="Brewtopia Coffee, Vaishali Nagar, Jaipur. Specialty coffee, cold brews, matcha and an all-day kitchen. Open 9 AM – 11:30 PM.">
+<meta name="theme-color" content="#1C4587">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 150'%3E%3Crect width='100' height='150' rx='20' fill='%231C4587'/%3E%3Cpath d='M6 6h88L50 76z' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M23 32h54L50 76z' fill='white'/%3E%3Ccircle cx='50' cy='100' r='42' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M50 84c8 14 14 22 14 30a14 14 0 0 1-28 0c0-8 6-16 14-30z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <svg class="loader__mark" viewBox="0 0 100 150">
+    <path class="lm-tri" d="M6 6h88L50 76z"/>
+    <path class="lm-fill" d="M23 32h54L50 76z"/>
+    <circle class="lm-ring" cx="50" cy="100" r="42"/>
+    <path class="lm-drop" d="M50 84c8 14 14 22 14 30a14 14 0 0 1-28 0c0-8 6-16 14-30z"/>
+  </svg>
+  <p class="loader__count"><span id="loadNum">00</span><small>brewing</small></p>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Brewtopia Coffee home">
+    <svg class="brand__mark" viewBox="0 0 100 150" aria-hidden="true">
+      <path d="M6 6h88L50 76z" fill="none" stroke="currentColor" stroke-width="6"/>
+      <path d="M23 32h54L50 76z" fill="currentColor"/>
+      <circle cx="50" cy="100" r="42" fill="none" stroke="currentColor" stroke-width="6"/>
+      <path d="M50 84c8 14 14 22 14 30a14 14 0 0 1-28 0c0-8 6-16 14-30z" fill="currentColor"/>
+    </svg>
+    <span class="brand__word">BREWTOPIA<em>COFFEE</em></span>
+  </a>
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#drinks">Drinks</a>
+    <a href="#space">The space</a>
+    <a href="#kitchen">Kitchen</a>
+    <a href="#reels">Reels</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <a class="nav__cta" href="tel:+919587777780">Book a table</a>
+</header>
+
+<!-- persistent WebGL stage (cup + glass) -->
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<main id="top">
+
+<!-- ============ 1. HERO — the cup ============ -->
+<section class="hero" id="hero">
+  <div class="hero__sticky">
+    <div class="hero__copy">
+      <p class="eyebrow">Vaishali Nagar &nbsp;/&nbsp; Jaipur</p>
+      <h1 class="hero__title">
+        <span class="ln"><span>Coffee,</span></span>
+        <span class="ln"><span><i>comfort,</i></span></span>
+        <span class="ln"><span>conversations.</span></span>
+      </h1>
+    </div>
+    <ul class="hero__facts">
+      <li><b>4.8</b><span>on Google<br>699 reviews</span></li>
+      <li><b>9—11:30</b><span>morning coffee<br>to late dinner</span></li>
+      <li><b>A3</b><span>Vaishali Marg,<br>near the police station</span></li>
+    </ul>
+    <figure class="hero__still" aria-hidden="true"><video muted loop playsinline autoplay preload="metadata" poster="assets/video/latte-art.jpg" src="assets/video/latte-art.mp4"></video></figure>
+    <p class="hero__hint"><span></span>scroll to take a sip</p>
+    <div class="hero__dive" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ============ 2. DRINKS — one glass, four moods ============ -->
+<section class="drinks" id="drinks">
+  <div class="drinks__sticky">
+    <div class="drinks__head">
+      <p class="eyebrow">The bar</p>
+      <p class="drinks__count"><span id="drinkIdx">01</span> / 04</p>
+    </div>
+
+    <div class="drinks__list">
+      <article class="drink is-on" data-i="0">
+        <h2>Cold Brew</h2>
+        <p>Steeped slow, poured over a glass of ice. Dark, clean and a little sweet on its own — no sugar needed.</p>
+        <span class="tag">over ice</span>
+      </article>
+      <article class="drink" data-i="1">
+        <h2>Iced Matcha</h2>
+        <p>Whisked matcha floated on cold milk. It arrives in two colours; stir it and it turns the softest green.</p>
+        <span class="tag">ceremonial green</span>
+      </article>
+      <article class="drink" data-i="2">
+        <h2>Purple Haze</h2>
+        <p>The one people photograph first. A violet base, a matcha cloud on top, and a lot of ice in between.</p>
+        <span class="tag">house special</span>
+      </article>
+      <article class="drink" data-i="3">
+        <h2>Iced Latte</h2>
+        <p>A double shot sinking through cold milk. Watch it bleed into layers before your first sip.</p>
+        <span class="tag">espresso</span>
+      </article>
+    </div>
+
+    <div class="drinks__photos" aria-hidden="true">
+      <figure class="dp is-on" data-i="0"><img src="assets/img/drink-coldbrew.jpg" alt=""></figure>
+      <figure class="dp" data-i="1"><img src="assets/img/drink-matcha.jpg" alt=""></figure>
+      <figure class="dp" data-i="2"><img src="assets/img/drink-purplehaze.jpg" alt=""></figure>
+      <figure class="dp" data-i="3"><img src="assets/img/drink-layered.jpg" alt=""></figure>
+      <figcaption class="dp__cap">the real one, at the bar</figcaption>
+    </div>
+
+    <div class="drinks__rail" aria-hidden="true"><i id="drinkBar"></i></div>
+  </div>
+</section>
+
+<!-- ============ 3. THE SPACE — walk in ============ -->
+<section class="space" id="space">
+  <div class="space__sticky">
+    <div class="space__intro">
+      <p class="eyebrow">The space</p>
+      <h2>Step inside.</h2>
+      <p>Blush walls, rattan lamps, a patterned floor and more corners to sit in than you'd expect from the street.</p>
+      <ol class="space__list" id="spaceList"></ol>
+    </div>
+    <div class="room" id="room">
+      <div class="room__world" id="roomWorld">
+        <!-- facade = entrance -->
+        <figure class="panel panel--door" style="--z:0"><img src="assets/img/facade-day.jpg" alt="Brewtopia Coffee storefront on Vaishali Marg"><figcaption>A3, Vaishali Marg</figcaption></figure>
+
+        <figure class="panel panel--l" style="--z:-900"><img src="assets/img/space-01.jpg" alt="Dining area with wooden tables"><figcaption>the long room</figcaption></figure>
+        <figure class="panel panel--r" style="--z:-1300"><img src="assets/img/space-08.jpg" alt="Pink wall and hanging lamps"><figcaption>blush walls</figcaption></figure>
+        <figure class="panel panel--l" style="--z:-1800"><img src="assets/img/space-02.jpg" alt="Tables under rattan lamps"><figcaption>rattan lamps</figcaption></figure>
+        <figure class="panel panel--r" style="--z:-2300"><img src="assets/img/space-10.jpg" alt="Sculpted wall art"><figcaption>the wall pieces</figcaption></figure>
+        <figure class="panel panel--l" style="--z:-2800"><img src="assets/img/space-04.jpg" alt="Seating near the counter"><figcaption>by the counter</figcaption></figure>
+        <figure class="panel panel--r" style="--z:-3300"><img src="assets/img/space-09.jpg" alt="Window-side tables"><figcaption>window seats</figcaption></figure>
+        <figure class="panel panel--l" style="--z:-3800"><img src="assets/img/space-05.jpg" alt="Patterned partition and a table"><figcaption>a quiet corner</figcaption></figure>
+        <figure class="panel panel--r" style="--z:-4300"><img src="assets/img/space-03.jpg" alt="Evening view of the cafe"><figcaption>after sunset</figcaption></figure>
+
+        <figure class="panel panel--end" style="--z:-5000"><img src="assets/img/counter.jpg" alt="The Brewtopia coffee counter and menu board"><figcaption>order here</figcaption></figure>
+      </div>
+    </div>
+    <p class="space__meter"><span id="roomM">01</span> / <span id="roomN">10</span></p>
+  </div>
+</section>
+
+<!-- ============ 4. KITCHEN — the ring ============ -->
+<section class="kitchen" id="kitchen">
+  <div class="kitchen__sticky">
+    <div class="kitchen__center">
+      <p class="eyebrow">From the kitchen</p>
+      <h2>Not just<br><i>a coffee stop.</i></h2>
+      <p>Breakfast through dinner — pizzas, baos, bowls, noodles and something cheesy to share. Drag the ring, or keep scrolling.</p>
+    </div>
+    <div class="ring" id="ring" aria-label="Food from Brewtopia's kitchen">
+      <div class="ring__spin" id="ringSpin">
+        <figure class="card"><img src="assets/img/food-01.jpg" alt="Pizza" loading="lazy"><figcaption>Pizza</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-02.jpg" alt="Bao with dips" loading="lazy"><figcaption>Bao</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-03.jpg" alt="Garlic bread and fries" loading="lazy"><figcaption>Garlic bread</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-04.jpg" alt="Pan pizza" loading="lazy"><figcaption>Pan pizza</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-05.jpg" alt="Noodles" loading="lazy"><figcaption>Noodles</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-06.jpg" alt="Salad bowl" loading="lazy"><figcaption>Healthy bowl</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-07.jpg" alt="Rolls with dip" loading="lazy"><figcaption>Rolls</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-08.jpg" alt="Small plates" loading="lazy"><figcaption>Small plates</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-09.jpg" alt="Noodle bowl" loading="lazy"><figcaption>Chilli noodles</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-10.jpg" alt="Bites with a drink" loading="lazy"><figcaption>Bites</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-11.jpg" alt="Open bao" loading="lazy"><figcaption>Loaded bao</figcaption></figure>
+        <figure class="card"><img src="assets/img/food-12.jpg" alt="Curry with toast" loading="lazy"><figcaption>All-day plates</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. REELS ============ -->
+<section class="reels" id="reels">
+  <div class="reels__head">
+    <p class="eyebrow">On the gram</p>
+    <h2>Filmed at<br><i>Brewtopia.</i></h2>
+    <a class="link" href="https://www.instagram.com/brewtopiacoffeejaipur/" target="_blank" rel="noopener">@brewtopiacoffeejaipur &nbsp;↗</a>
+  </div>
+  <div class="fan" id="fan">
+    <a class="phone" href="https://www.instagram.com/reel/DdgENhoRF0-/" target="_blank" rel="noopener" style="--i:-2"><video muted loop playsinline preload="none" poster="assets/video/reel-prettiest.jpg" data-src="assets/video/reel-prettiest.mp4"></video><span>the prettiest corner</span></a>
+    <a class="phone" href="https://www.instagram.com/reel/Dc32cWQBWqs/" target="_blank" rel="noopener" style="--i:-1"><video muted loop playsinline preload="none" poster="assets/video/reel-pour.jpg" data-src="assets/video/reel-pour.mp4"></video><span>every pour</span></a>
+    <a class="phone phone--mid" href="https://www.google.com/maps/place/Brewtopia+Cafe+Coffee/@26.9154438,75.7344905,17z" target="_blank" rel="noopener" style="--i:0"><video muted loop playsinline preload="none" poster="assets/video/latte-art.jpg" data-src="assets/video/latte-art.mp4"></video><span>latte art, live</span></a>
+    <a class="phone" href="https://www.instagram.com/reel/DdeJiJxho1G/" target="_blank" rel="noopener" style="--i:1"><video muted loop playsinline preload="none" poster="assets/video/reel-space.jpg" data-src="assets/video/reel-space.mp4"></video><span>come for the vibe</span></a>
+    <a class="phone" href="https://www.instagram.com/reel/DdHDL4So6-R/" target="_blank" rel="noopener" style="--i:2"><video muted loop playsinline preload="none" poster="assets/video/reel-interior.jpg" data-src="assets/video/reel-interior.mp4"></video><span>a walk-through</span></a>
+  </div>
+</section>
+
+<!-- ============ 6. HAPPENING ============ -->
+<section class="happening">
+  <div class="happening__grid">
+    <div class="happening__text">
+      <p class="eyebrow">Happening here</p>
+      <h2>Sip &amp; Art,<br><i>and other evenings.</i></h2>
+      <p>Canvases on the tables, coffee on the side. Brewtopia hosts painting nights, birthdays and long catch-ups — dates go up on Instagram first.</p>
+      <a class="btn btn--ghost" href="https://www.instagram.com/brewtopiacoffeejaipur/" target="_blank" rel="noopener">See what's next</a>
+    </div>
+    <figure class="stack s1"><img src="assets/img/people-art.jpg" alt="Guests painting at a Sip and Art evening" loading="lazy"></figure>
+    <figure class="stack s2"><img src="assets/img/people-baristas.jpg" alt="Baristas behind the Brewtopia counter" loading="lazy"></figure>
+    <figure class="stack s3"><img src="assets/img/people-guests.jpg" alt="Guests sharing a table" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- ============ 7. WORD ============ -->
+<section class="word">
+  <div class="word__score">
+    <b>4.8</b>
+    <span class="stars" aria-label="4.8 out of 5">★★★★★</span>
+    <p>from 699 reviews on Google</p>
+  </div>
+  <ul class="word__quotes">
+    <li><q>Best food quality, very tasty food, and staff behaviour is very polite.</q><span>— Google review</span></li>
+    <li><q>Awesome ambience, love the coffee taste and garlic bread.</q><span>— Google review</span></li>
+    <li><q>I had pasta and pizza at Brewtopia and really enjoyed the experience.</q><span>— Google review</span></li>
+  </ul>
+</section>
+
+<!-- ============ 8. VISIT ============ -->
+<section class="visit" id="visit">
+  <div class="visit__bg"><img src="assets/img/facade-night.jpg" alt="" loading="lazy"></div>
+  <div class="visit__card">
+    <p class="eyebrow">Visit</p>
+    <h2>See you<br><i>at the counter.</i></h2>
+    <dl>
+      <div><dt>Where</dt><dd>A3, Vaishali Marg, near Vaishali Police Station, Nemi Nagar Extension, Vaishali Nagar, Jaipur 302021</dd></div>
+      <div><dt>When</dt><dd>9:00 AM — 11:30 PM</dd></div>
+      <div><dt>Call</dt><dd><a href="tel:+919587777780">095877 77780</a></dd></div>
+      <div><dt>Spend</dt><dd>₹200 — ₹1,000 per person</dd></div>
+    </dl>
+    <div class="visit__btns">
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Brewtopia+Cafe+Coffee+Vaishali+Nagar+Jaipur" target="_blank" rel="noopener">Get directions</a>
+      <a class="btn btn--ghost" href="tel:+919587777780">Reserve a table</a>
+    </div>
+  </div>
+  <div class="visit__map">
+    <iframe title="Map to Brewtopia Coffee" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Brewtopia+Cafe+Coffee,+Vaishali+Nagar,+Jaipur&output=embed"></iframe>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="bt-mark" viewBox="0 0 100 150"><path d="M6 6h88L50 76z" fill="none" stroke="currentColor" stroke-width="5"/><path d="M23 32h54L50 76z" fill="currentColor"/><circle cx="50" cy="100" r="42" fill="none" stroke="currentColor" stroke-width="5"/><path d="M50 84c8 14 14 22 14 30a14 14 0 0 1-28 0c0-8 6-16 14-30z" fill="currentColor"/></symbol></svg>
+  <div class="foot__marquee" aria-hidden="true"><div class="foot__track"><span>BREWTOPIA</span><svg viewBox="0 0 100 150"><use href="#bt-mark"/></svg><span>BREWTOPIA</span><svg viewBox="0 0 100 150"><use href="#bt-mark"/></svg><span>BREWTOPIA</span><svg viewBox="0 0 100 150"><use href="#bt-mark"/></svg><span>BREWTOPIA</span><svg viewBox="0 0 100 150"><use href="#bt-mark"/></svg><span>BREWTOPIA</span><svg viewBox="0 0 100 150"><use href="#bt-mark"/></svg><span>BREWTOPIA</span><svg viewBox="0 0 100 150"><use href="#bt-mark"/></svg></div></div>
+  <div class="foot__row">
+    <span>Coffee · Comfort · Conversations</span>
+    <a href="https://www.instagram.com/brewtopiacoffeejaipur/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.google.com/maps/place/Brewtopia+Cafe+Coffee/@26.9154438,75.7344905,17z" target="_blank" rel="noopener">Google Maps</a>
+    <span>© Brewtopia Coffee, Jaipur</span>
+  </div>
+</footer>
+
+<script src="js/three.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

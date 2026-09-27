@@ -1,0 +1,7 @@
+# raw downloads used to build the site (large, not needed for hosting)
+_source-media/
+_sheets/
+*.zip
+Thumbs.db
+desktop.ini
+.DS_Store
